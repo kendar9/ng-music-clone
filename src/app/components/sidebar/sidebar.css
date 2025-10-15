@@ -1,0 +1,55 @@
+
+.sidebar-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main-nav ul, .playlist-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main-nav a, .playlist-section a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover, .playlist-section a:hover {
+  color: #fff;
+}
+
+.main-nav li.active a {
+  color: #fff;
+}
+
+.main-nav svg {
+  width: 24px;
+  height: 24px;
+}
+
+.section-title {
+  color: #b3b3b3;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.playlist-section {
+  border-top: 1px solid #282828;
+  padding-top: 24px;
+  flex-grow: 1; /* Ocupa el espacio restante */
+  overflow-y: auto; /* Permite scroll si hay muchas playlists */
+}

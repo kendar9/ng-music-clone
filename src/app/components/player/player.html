@@ -1,0 +1,52 @@
+<div class="player-container" *ngIf="currentSong$ | async as song; else emptyPlayer">
+  <!-- Info de la canción -->
+  <div class="song-info">
+    <img [src]="song.coverUrl" alt="{{ song.album }} cover" class="song-cover">
+    <div>
+      <p class="song-title">{{ song.title }}</p>
+      <p class="song-artist">{{ song.artist.name }}</p>
+    </div>
+  </div>
+
+  <!-- Controles (simulados) -->
+  <div class="player-controls">
+    <div class="control-buttons">
+      <button class="control-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+      </button>
+      <button class="control-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 19 2 12 11 5 11 19"></polygon><polygon points="22 19 13 12 22 5 22 19"></polygon></svg>
+      </button>
+      <button class="control-button play-pause">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+      </button>
+      <button class="control-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
+      </button>
+      <button class="control-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11.6V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 12.4V15a4 4 0 0 1-4 4H3"></path></svg>
+      </button>
+    </div>
+    <div class="progress-bar-container">
+      <span class="time">1:23</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 40%;"></div>
+      </div>
+      <span class="time">3:45</span>
+    </div>
+  </div>
+
+  <!-- Controles de volumen (simulados) -->
+  <div class="volume-controls">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+    <div class="progress-bar">
+      <div class="progress" style="width: 80%;"></div>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyPlayer>
+  <div class="player-container empty-player">
+    <p>Selecciona una canción para reproducir</p>
+  </div>
+</ng-template>
