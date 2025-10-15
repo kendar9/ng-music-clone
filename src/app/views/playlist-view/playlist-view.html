@@ -1,5 +1,4 @@
 <div class="playlist-container" *ngIf="playlist$ | async as playlist; else loading">
-  <!-- Header con la portada y el título -->
   <header class="playlist-header">
     <img [src]="playlist.coverUrl" alt="{{ playlist.name }} cover" class="playlist-cover">
     <div class="playlist-info">
@@ -9,9 +8,7 @@
     </div>
   </header>
 
-  <!-- Lista de canciones -->
   <div class="song-list">
-    <!-- Encabezados de la tabla -->
     <div class="song-list-header">
       <span>#</span>
       <span>TÍTULO</span>
@@ -21,7 +18,6 @@
       </span>
     </div>
 
-    <!-- Filas de canciones -->
     <div class="song-item" *ngFor="let song of playlist.songs; let i = index">
       <div class="song-index-container">
         <span class="song-index">{{ i + 1 }}</span>
